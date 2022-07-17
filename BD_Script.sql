@@ -18,15 +18,15 @@ GO
 	CREATE TABLE Comida(
 		Id INT NOT NULL PRIMARY KEY IDENTITY,
 		Nombre VARCHAR(50),
-		ImagenUrl VARCHAR(200),
-		Descripcion VARCHAR(200),
+		ImagenUrl VARCHAR(500),
+		Descripcion VARCHAR(1000),
 		FechaFinVigencia DATETIME
 	);
 
 	CREATE TABLE Ingrediente(
 		Id INT NOT NULL PRIMARY KEY IDENTITY,
 		Nombre VARCHAR(50),
-		ImagenUrl VARCHAR(200),
+		ImagenUrl VARCHAR(500),
 		FechaFinVigencia DATETIME
 	);
 
@@ -75,4 +75,17 @@ GO
 	INSERT INTO ComidaIngrediente VALUES ( 3, 9);
 	INSERT INTO ComidaIngrediente VALUES ( 3, 10);
 	INSERT INTO ComidaIngrediente VALUES ( 3, 11);
+GO
+
+-- Querys utilizadas en el codigo
+GO
+	SELECT * FROM Comida C WHERE C.FechaFinVigencia IS NULL;
+
+	SELECT * FROM Comida C WHERE C.Id = 1 AND C.FechaFinVigencia IS NULL;
+GO
+
+GO
+	TRUNCATE TABLE ComidaIngrediente;
+	TRUNCATE TABLE Comida;
+	TRUNCATE TABLE Ingrediente;
 GO
