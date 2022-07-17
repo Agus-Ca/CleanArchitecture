@@ -2,6 +2,7 @@
 
 using Infrastructure.Persistence.Dapper;
 using Infrastructure.Persistence.EntityFramework;
+using Infrastructure.Persistence.Dapper.Queries;
 
 namespace Microsoft.Extensions.DependencyInjection;
 
@@ -11,7 +12,9 @@ public static class DependencyInjection
     {
         services.AddEFDatabase(configuration);
         services.AddDapperDatabase(configuration);
-        
+
+        services.AddQueries();
+
         return services;
     }
 }

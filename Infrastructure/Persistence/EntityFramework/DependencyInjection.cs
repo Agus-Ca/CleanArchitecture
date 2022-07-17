@@ -2,6 +2,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+using Application.Common.Interfaces;
+
+
+
 namespace Infrastructure.Persistence.EntityFramework
 {
     public static class DependencyInjection
@@ -13,6 +17,8 @@ namespace Infrastructure.Persistence.EntityFramework
                 {
                     options.UseSqlServer(configuration.GetConnectionString("EFDatabase"));
                 });
+
+            services.AddTransient<IComidaDBContext, ComidasDBContext>();
 
             return services;
         }

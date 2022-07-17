@@ -1,9 +1,13 @@
-﻿using Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+
+using Application.Common.Interfaces;
+using Domain.Entities;
+
+
 
 namespace Infrastructure.Persistence.EntityFramework
 {
-    public partial class ComidasDBContext : DbContext
+    public partial class ComidasDBContext : DbContext, IComidaDBContext
     {
         public ComidasDBContext()
         {
@@ -30,13 +34,13 @@ namespace Infrastructure.Persistence.EntityFramework
             modelBuilder.Entity<Comida>(entity =>
             {
                 entity.Property(e => e.Descripcion)
-                    .HasMaxLength(200)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.FechaFinVigencia).HasColumnType("datetime");
 
                 entity.Property(e => e.ImagenUrl)
-                    .HasMaxLength(200)
+                    .HasMaxLength(500)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Nombre)
@@ -64,7 +68,7 @@ namespace Infrastructure.Persistence.EntityFramework
                 entity.Property(e => e.FechaFinVigencia).HasColumnType("datetime");
 
                 entity.Property(e => e.ImagenUrl)
-                    .HasMaxLength(200)
+                    .HasMaxLength(500)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Nombre)
