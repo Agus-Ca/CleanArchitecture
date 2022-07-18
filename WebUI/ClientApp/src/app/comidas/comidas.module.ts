@@ -4,6 +4,7 @@ import { AgregarComponent } from './pages/agregar/agregar.component';
 import { ComidaComponent } from './pages/comida/comida.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
+import { ComidasRoutingModule } from './comidas-routing.module';
 
 
 
@@ -15,7 +16,8 @@ import { ListadoComponent } from './pages/listado/listado.component';
     ListadoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ComidasRoutingModule
   ]
 })
 export class ComidasModule { }
