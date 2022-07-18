@@ -17,14 +17,14 @@
         </div>
 
         <div fxFlex="50">
-            <h1><small>{{ comida.nombre }}</small></h1>
+            <h1><small>Descripción</small></h1>
             <mat-divider></mat-divider>
-            <br><br><br>
+            <br>
 
-            <mat-list>
-                <mat-list-item>{{ comida.descripcion }}</mat-list-item>
-            </mat-list>
-            <br><br><br>
+            <p>
+                {{ comida.descripcion }}
+            </p>
+            <br>
 
             <button mat-button color="warn"
                     (click)="regresar()">
