@@ -37,7 +37,7 @@ namespace WebUI.Controllers
 
         // POST api/<Comida>
         [HttpPost]
-        public async Task<Unit> Post([FromBody] AddComidaCommand command)
+        public async Task<Domain.Entities.Comida> Post([FromBody] AddComidaCommand command)
         {
             return await _mediator.Send(command);
         }
@@ -51,7 +51,7 @@ namespace WebUI.Controllers
 
         // DELETE api/<Comida>/5
         [HttpDelete]
-        public async Task<Unit> Delete([FromBody] DeleteComidaCommand command)
+        public async Task<Unit> Delete([FromQuery] DeleteComidaCommand command)
         {
             return await _mediator.Send(command);
         }

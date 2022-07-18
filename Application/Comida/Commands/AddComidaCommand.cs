@@ -4,9 +4,9 @@ using Application.Common.Interfaces;
 
 namespace Application.Comida.Commands
 {
-    public record AddComidaCommand(string Nombre, string ImagenUrl, string Descripcion) : IRequest<Unit>;
+    public record AddComidaCommand(string Nombre, string ImagenUrl, string Descripcion) : IRequest<Domain.Entities.Comida>;
 
-    public class AddComidaHandler : IRequestHandler<AddComidaCommand, Unit>
+    public class AddComidaHandler : IRequestHandler<AddComidaCommand, Domain.Entities.Comida>
     {
         private readonly IComidaDBContext _context;
 
@@ -15,7 +15,7 @@ namespace Application.Comida.Commands
             _context = context;
         }
 
-        public async Task<Unit> Handle(AddComidaCommand request, CancellationToken cancellationToken)
+        public async Task<Domain.Entities.Comida> Handle(AddComidaCommand request, CancellationToken cancellationToken)
         {
             var comida = new Domain.Entities.Comida
             {
@@ -28,7 +28,7 @@ namespace Application.Comida.Commands
 
             await _context.SaveChangesAsync(cancellationToken);
 
-            return new Unit();
+            return comida;
         }
     }
 }
