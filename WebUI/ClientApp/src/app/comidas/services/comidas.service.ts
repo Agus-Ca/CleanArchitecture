@@ -13,4 +13,8 @@ export class ComidasService {
   getComidas():Observable<Comida[]> {
     return this.http.get<Comida[]>('https://localhost:7203/api/Comida');
   }
+
+  getComidaById( ComidaId: number ): Observable<Comida> {
+    return this.http.get<Comida>(`https://localhost:7203/api/Comida/GetById?ComidaId=${ComidaId}`);
+  }
 }
