@@ -4,10 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { AgregarComponent } from './pages/agregar/agregar.component';
 import { IngredienteComponent } from './pages/ingrediente/ingrediente.component';
 import { ListadoComponent } from './pages/listado/listado.component';
+import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
+    component: HomeComponent,
     children: [
       {
         path: 'listado',

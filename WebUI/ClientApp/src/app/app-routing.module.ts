@@ -5,15 +5,11 @@ import { ErrorPageComponent } from './shared/error-page/error-page.component';
 const routes: Routes = [
   {
     path: 'comidas',
-    loadChildren: () => import('./comidas/comidas-routing.module').then(m => m.ComidasRoutingModule)
+    loadChildren: () => import('./comidas/comidas.module').then(m => m.ComidasModule)
   },
   {
     path: 'ingredientes',
-    loadChildren: () => import('./ingredientes/ingredientes-routing.module').then(m => m.IngredientesRoutingModule)
-  },
-  {
-    path: 'ingredientes',
-    loadChildren: () => import('./ingredientes/ingredientes-routing.module').then(m => m.IngredientesRoutingModule)
+    loadChildren: () => import('./ingredientes/ingredientes.module').then(m => m.IngredientesModule)
   },
   {
     path: '404',

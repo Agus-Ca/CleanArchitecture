@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { ComidasRoutingModule } from './comidas-routing.module';
+
 import { AgregarComponent } from './pages/agregar/agregar.component';
 import { ComidaComponent } from './pages/comida/comida.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
-import { ComidasRoutingModule } from './comidas-routing.module';
 
 
 
