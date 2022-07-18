@@ -10,6 +10,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Configuracion de cors
+string CorsAllowed = "CorsAllowed";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: CorsAllowed, builder =>
+    {
+        builder.SetIsOriginAllowed(origin => new Uri(origin).Host == "localhost")
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddMediatR(typeof(ApplicationMediatREntryPoint).Assembly);
 
@@ -23,6 +35,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(CorsAllowed);
 
 app.UseAuthorization();
 
