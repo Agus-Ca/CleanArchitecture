@@ -19,7 +19,7 @@ namespace Infrastructure.Persistence.EntityFramework
         }
 
         public virtual DbSet<Comida> Comida { get; set; } = null!;
-        public virtual DbSet<Ingrediente> Ingredientes { get; set; } = null!;
+        public virtual DbSet<Ingrediente> Ingrediente { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

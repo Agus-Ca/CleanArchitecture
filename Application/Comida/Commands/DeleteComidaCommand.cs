@@ -26,7 +26,7 @@ namespace Application.Comida.Commands
                 return new Unit();
             }
 
-            _context.Comida.Remove(comida);
+            comida.FechaFinVigencia = DateTime.Now;
 
             await _context.SaveChangesAsync(cancellationToken);
 

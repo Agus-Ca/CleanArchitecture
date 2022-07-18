@@ -17,8 +17,8 @@ namespace Infrastructure.Persistence.Dapper.Queries.Comida
 
         public async Task<IEnumerable<Domain.Entities.Comida>> GetComidas(CancellationToken cancellationToken)
         {
-            var query = "SELECT * FROM Comida C" +
-                        "WHERE C.";
+            var query = "SELECT * FROM Comida C " +
+                        "WHERE C.FechaFinVigencia IS NULL";
 
             return await _context.QueryAsync<Domain.Entities.Comida>(query, cancellationToken);
         }

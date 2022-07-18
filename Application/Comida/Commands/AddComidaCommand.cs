@@ -1,6 +1,5 @@
 ﻿using MediatR;
 
-using Application.Comida.Models;
 using Application.Common.Interfaces;
 
 namespace Application.Comida.Commands
