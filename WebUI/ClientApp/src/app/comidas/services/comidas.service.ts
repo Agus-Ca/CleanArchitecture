@@ -17,4 +17,16 @@ export class ComidasService {
   getComidaById( ComidaId: number ): Observable<Comida> {
     return this.http.get<Comida>(`https://localhost:7203/api/Comida/GetById?ComidaId=${ComidaId}`);
   }
+
+  addComida( comida: Comida): Observable<Comida> {
+    return this.http.post<Comida>(`https://localhost:7203/api/Comida`, comida)
+  }
+
+  updateComida( comida: Comida ): Observable<any> {
+    return this.http.put(`https://localhost:7203/api/Comida`, comida);
+  }
+
+  deleteComida( idComida: number ): Observable<any> {
+    return this.http.delete(`https://localhost:7203/api/Comida?IdComida=${idComida}`);
+  }
 }

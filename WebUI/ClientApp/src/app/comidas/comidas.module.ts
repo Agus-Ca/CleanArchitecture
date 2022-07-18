@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 
 import { ComidasRoutingModule } from './comidas-routing.module';
 import { MaterialModule } from '../material/material.module';
@@ -11,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { ComidaTarjetaComponentComponent } from './components/comida-tarjeta-component/comida-tarjeta-component.component';
 import { ComidaImagenPipe } from './pipes/comida-imagen.pipe';
+import { ConfirmarComponent } from './components/confirmar-component/confirmar.component';
 
 
 
@@ -21,13 +23,15 @@ import { ComidaImagenPipe } from './pipes/comida-imagen.pipe';
     HomeComponent,
     ListadoComponent,
     ComidaTarjetaComponentComponent,
-    ComidaImagenPipe
+    ComidaImagenPipe,
+    ConfirmarComponent
   ],
   imports: [
     CommonModule,
     FlexLayoutModule,
     MaterialModule,
-    ComidasRoutingModule
+    ComidasRoutingModule,
+    FormsModule
   ]
 })
 export class ComidasModule { }
