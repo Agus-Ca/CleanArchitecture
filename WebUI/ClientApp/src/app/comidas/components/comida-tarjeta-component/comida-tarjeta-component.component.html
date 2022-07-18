@@ -1,0 +1,18 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ comida.nombre }}</mat-card-title>
+    </mat-card-header>
+
+    <img mat-card-image [src]="comida | comidaImagen" alt="img failed to load">
+
+    <mat-card-actions>
+        <button mat-button color="warn"
+                [routerLink]="['/comidas', comida.id]">
+            Leer mas...
+        </button>
+        <button mat-button color="info"
+                [routerLink]="['/comidas/editar', comida.id]">
+            Editar
+        </button>
+    </mat-card-actions>
+</mat-card>

@@ -9,6 +9,8 @@ import { AgregarComponent } from './pages/agregar/agregar.component';
 import { ComidaComponent } from './pages/comida/comida.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListadoComponent } from './pages/listado/listado.component';
+import { ComidaTarjetaComponentComponent } from './components/comida-tarjeta-component/comida-tarjeta-component.component';
+import { ComidaImagenPipe } from './pipes/comida-imagen.pipe';
 
 
 
@@ -17,7 +19,9 @@ import { ListadoComponent } from './pages/listado/listado.component';
     AgregarComponent,
     ComidaComponent,
     HomeComponent,
-    ListadoComponent
+    ListadoComponent,
+    ComidaTarjetaComponentComponent,
+    ComidaImagenPipe
   ],
   imports: [
     CommonModule,
