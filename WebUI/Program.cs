@@ -3,6 +3,13 @@ using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Configuracion del puerto
+builder.WebHost.UseKestrel(serverOptions =>
+{
+    serverOptions.ListenAnyIP(4000);
+    serverOptions.ListenAnyIP(4001, listenOptions => listenOptions.UseHttps());
+});
+
 // Add services to the container.
 builder.Services.AddControllers();
 
